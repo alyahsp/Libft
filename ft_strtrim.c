@@ -1,0 +1,62 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: spalmaro <spalmaro@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/03 18:42:36 by spalmaro          #+#    #+#             */
+/*   Updated: 2016/11/03 18:54:08 by spalmaro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+static int		countbegspace(const char *s)
+{
+	int space;
+
+	space = 0;
+	while (*s == ' ' || *s == '\t' || *s == '\n')
+	{
+		space++;
+		s++;
+	}
+	return (space);
+}
+
+static int		countendspace(const char *s)
+{
+	int len;
+	int space;
+
+	len = ft_strlen(s);
+	space = 0;
+	while (s[len - 1] == ' ' || s[len - 1] == '\t' || s[len - 1] == '\n')
+	{
+		len--;
+		space++;
+	}
+	return (space);
+}
+
+char			*ft_strtrim(char const *s)
+{
+	int		i;
+	int		space;
+	int		len;
+	char	*dst;
+
+	i = 0;
+	space = countbegspace(s) + countendspace(s);
+	len = ft_strlen(s) - space;
+	if (!(dst = (char *)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	while (i < len)
+	{
+		dst[i] = s[countbegspace(s) + i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
+}
