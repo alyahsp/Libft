@@ -93,5 +93,6 @@ char		**ft_strsplit(char const *s, char c)
 		fillarray(dst[i], s, &k, c);
 		i++;
 	}
+	dst[i] = NULL;
 	return (dst);
 }
