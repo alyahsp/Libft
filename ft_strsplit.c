@@ -19,6 +19,8 @@ static int	countwords(const char *s, char c)
 
 	i = 0;
 	words = 0;
+	if (s[i] == '\0')
+		return (0);
 	if (s[i] != c)
 		words++;
 	while (s[i] != c)

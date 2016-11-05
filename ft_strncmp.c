@@ -15,18 +15,18 @@
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t			i;
-	unsigned char	*s1u;
-	unsigned char	*s2u;
 
 	i = 0;
-	s1u = (unsigned char*)s1;
-	s2u = (unsigned char*)s2;
-	while (i < n)
+	if (s1 || s2 || n)
 	{
-		if (s1u[i] == s2u[i])
+		while (i < n)
+		{
+			if (s1[i] != s2[i])
+				return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+			else if (!s1[i] || !s2[i])
+				return (0);
 			i++;
-		else
-			return (s1u[i] - s2u[i]);
+		}
 	}
 	return (0);
 }

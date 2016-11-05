@@ -15,13 +15,17 @@
 static int		countbegspace(const char *s)
 {
 	int space;
+	int i;
 
 	space = 0;
-	while (*s == ' ' || *s == '\t' || *s == '\n')
+	i = 0;
+	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
 	{
 		space++;
 		s++;
 	}
+	if (s[i] == '\0')
+		return (0);
 	return (space);
 }
 
@@ -29,14 +33,18 @@ static int		countendspace(const char *s)
 {
 	int len;
 	int space;
+	int i;
 
 	len = ft_strlen(s);
 	space = 0;
+	i = 0;
 	while (s[len - 1] == ' ' || s[len - 1] == '\t' || s[len - 1] == '\n')
 	{
 		len--;
 		space++;
 	}
+	if (s[i] == '\0')
+		return (0);
 	return (space);
 }
 

@@ -21,11 +21,14 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	new = NULL;
 	if (!(new = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
 		return (NULL);
-	while (s[i])
+	if (s && f)
 	{
-		new[i] = (*f)(s[i]);
-		i++;
+		while (s[i])
+		{
+			new[i] = (*f)(s[i]);
+			i++;
+		}
+		new[i] = '\0';
 	}
-	new[i] = '\0';
 	return (new);
 }
