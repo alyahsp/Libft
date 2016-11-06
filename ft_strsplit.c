@@ -21,15 +21,16 @@ static int	countwords(const char *s, char c)
 	words = 0;
 	if (s[i] == '\0')
 		return (0);
-	if (s[i] != c)
-		words++;
-	while (s[i] != c)
-		i++;
 	while (s[i])
 	{
-		if (s[i] != c && (s[i - 1] == c))
+		while (s[i] == c)
+			i++;
+		if (s[i] != c && s[i])
+		{
+			while (s[i] != c && s[i])
+				i++;
 			words++;
-		i++;
+		}
 	}
 	return (words);
 }

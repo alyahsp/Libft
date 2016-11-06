@@ -17,8 +17,11 @@ void	*ft_memalloc(size_t size)
 	unsigned char *mem;
 
 	mem = NULL;
-	if (!(mem = (unsigned char *)malloc(sizeof(char) * (size + 1))))
-		return (NULL);
-	ft_memset(mem, 0, size + 1);
+	if (size <= 65535)
+	{
+		if (!(mem = (unsigned char *)malloc(sizeof(char) * (size + 1))))
+			return (NULL);
+		ft_memset(mem, 0, size + 1);
+	}
 	return (mem);
 }
