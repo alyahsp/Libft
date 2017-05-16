@@ -6,7 +6,7 @@
 /*   By: spalmaro <spalmaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 18:42:36 by spalmaro          #+#    #+#             */
-/*   Updated: 2016/11/03 18:54:08 by spalmaro         ###   ########.fr       */
+/*   Updated: 2016/11/07 18:22:58 by spalmaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int		countbegspace(const char *s)
 	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
 	{
 		space++;
-		s++;
+		i++;
 	}
 	if (s[i] == '\0')
 		return (0);
@@ -56,6 +56,8 @@ char			*ft_strtrim(char const *s)
 	char	*dst;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	space = countbegspace(s) + countendspace(s);
 	len = ft_strlen(s) - space;
 	if (!(dst = (char *)malloc(sizeof(char) * (len + 1))))

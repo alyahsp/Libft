@@ -6,7 +6,7 @@
 /*   By: spalmaro <spalmaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 19:08:47 by spalmaro          #+#    #+#             */
-/*   Updated: 2016/11/03 19:10:58 by spalmaro         ###   ########.fr       */
+/*   Updated: 2016/11/07 18:17:12 by spalmaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	if (s)
+	if (s && fd >= 0)
 	{
 		while (*s)
 		{

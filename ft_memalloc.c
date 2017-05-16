@@ -6,7 +6,7 @@
 /*   By: spalmaro <spalmaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 17:58:51 by spalmaro          #+#    #+#             */
-/*   Updated: 2016/11/03 17:59:09 by spalmaro         ###   ########.fr       */
+/*   Updated: 2016/11/05 17:05:30 by spalmaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ void	*ft_memalloc(size_t size)
 			return (NULL);
 		ft_memset(mem, 0, size + 1);
 	}
-	return (mem);
+	return ((void *)mem);
 }

@@ -6,7 +6,7 @@
 /*   By: spalmaro <spalmaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 16:34:47 by spalmaro          #+#    #+#             */
-/*   Updated: 2016/11/04 14:43:52 by spalmaro         ###   ########.fr       */
+/*   Updated: 2016/11/06 14:46:37 by spalmaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size)
 	i = len_d;
 	j = 0;
 	if (!size)
-		return (len_d);
+		return (len_s);
 	while (src[j] && i < size - 1)
 		dst[i++] = src[j++];
 	dst[i] = '\0';

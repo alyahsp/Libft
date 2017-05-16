@@ -6,7 +6,7 @@
 /*   By: spalmaro <spalmaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 16:34:34 by spalmaro          #+#    #+#             */
-/*   Updated: 2016/11/04 16:07:00 by spalmaro         ###   ########.fr       */
+/*   Updated: 2016/11/05 16:27:49 by spalmaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,4 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		n--;
 	}
 	return (NULL);
-
 }

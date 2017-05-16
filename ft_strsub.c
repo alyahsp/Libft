@@ -6,7 +6,7 @@
 /*   By: spalmaro <spalmaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 18:42:28 by spalmaro          #+#    #+#             */
-/*   Updated: 2016/11/03 18:46:24 by spalmaro         ###   ########.fr       */
+/*   Updated: 2016/11/07 18:36:20 by spalmaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	char			*new;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	if (!(new = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	while (len-- > 0)

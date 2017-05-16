@@ -6,7 +6,7 @@
 /*   By: spalmaro <spalmaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 19:17:23 by spalmaro          #+#    #+#             */
-/*   Updated: 2016/11/04 16:09:21 by spalmaro         ###   ########.fr       */
+/*   Updated: 2017/03/23 16:49:26 by spalmaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	void	*cpy;
 
 	cpy = ft_memalloc(content_size);
-	if (!cpy)
+	if (!(cpy))
 		return (NULL);
 	if (!content)
 	{
@@ -32,5 +32,6 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	list->content = cpy;
 	list->content_size = content_size;
 	list->next = NULL;
+	free(cpy);
 	return (list);
 }

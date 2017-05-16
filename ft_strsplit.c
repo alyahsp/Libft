@@ -6,7 +6,7 @@
 /*   By: spalmaro <spalmaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 18:59:47 by spalmaro          #+#    #+#             */
-/*   Updated: 2016/11/04 18:38:27 by spalmaro         ###   ########.fr       */
+/*   Updated: 2016/11/07 18:38:50 by spalmaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ static int	countwords(const char *s, char c)
 
 	i = 0;
 	words = 0;
-	if (s[i] == '\0')
+	if (s[i] == '\0' || !c)
 		return (0);
 	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
-		if (s[i] != c && s[i])
+		if ((s[i] != c) && s[i])
 		{
-			while (s[i] != c && s[i])
+			while ((s[i] != c) && s[i])
 				i++;
 			words++;
 		}
@@ -82,6 +82,8 @@ char		**ft_strsplit(char const *s, char c)
 	j = 0;
 	k = 0;
 	dst = NULL;
+	if (!s || !c)
+		return (NULL);
 	j = countwords(s, c);
 	if (!(dst = (char **)malloc(sizeof(char *) * j + 1)))
 		return (NULL);
